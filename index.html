@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        h1{
+            background-color: beige;
+            text-align: center;
+        }
+        button{
+            margin-left: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello</h1>
+    
+    <!-- Optional: add controls to see the player -->
+    <audio id="audio-1" src="tuning.mp3" loop ></audio>
+    
+    <button id="btn">Play Audio</button>
+
+    <script>
+        // Fix 1: Use document.getElementById
+        const aud = document.getElementById("audio-1");
+        const btn = document.getElementById("btn");
+
+        // Define the function
+        function playAudio() {
+            aud.play();
+        }
+
+        // Fix 2: addEventListener (correct spelling)
+        // Fix 3: Pass the function, don't call it
+        btn.addEventListener("click", playAudio);
+    </script>
+</body>
+</html>
